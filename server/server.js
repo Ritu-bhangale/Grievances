@@ -2,8 +2,9 @@ const express = require('express')
 const dotenv = require('dotenv').config()
 const cookieParser = require('cookie-parser')
 const {connectDb} = require('./db/connect')
-const {createUser , loginUser , logoutUser} = require('./functions/functions')
+const {createUser , loginUser , logoutUser, issueFormPost, showAllGrievances, sortGrievancesByType, getUsersGrievance, getUncompletedGrievances} = require('./functions/functions')
 const {isAuthenticated} = require('./middlewares/auth')
+const {isUser,isAdmin,isStaff} = require('./middlewares/access')
 const server = express()
 
 
@@ -15,11 +16,12 @@ server.get('/',(req,res)=>{
 })
 server.post('/api/signUp',createUser)
 server.post('/api/login',loginUser)
-server.get('/tokenTest',isAuthenticated,(req,res)=>{ // testing route
-    res.send('hello')
-})
-server.post('/api/logout',logoutUser)
-server.post('/api/logout',logoutUser)
+server.post('/api/submitRequest',isAuthenticated,isUser,issueFormPost)
+server.get('/api/grievances',isAuthenticated,isAdmin,showAllGrievances)
+server.get('/api/grievances/:type',isAuthenticated,isAdmin,sortGrievancesByType)
+server.post('/api/logout',isAuthenticated,logoutUser)
+server.get('/api/user/grievances',isAuthenticated,isUser,getUsersGrievance)
+server.get('/api/grievances/uncompleted',isAuthenticated,isAdmin,getUncompletedGrievances)
 
 
 connectDb(process.env.MONGO_URI)

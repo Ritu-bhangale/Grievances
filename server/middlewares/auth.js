@@ -15,7 +15,7 @@ const isAuthenticated = async(req,res,next)=>{
     // console.log("token   ",tokenVal)
     
     req.user = await userModel.findById(tokenVal.id)
-    console.log(req.user)
+    // console.log(req.user)
     next()
 }
 

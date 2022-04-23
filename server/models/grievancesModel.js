@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const grievancesSchema = mongoose.Schema({
     user:{
         type:mongoose.Schema.ObjectId,
-        ref:"User",
+        ref:"user",
         require:true
     },
     type:{
@@ -13,6 +13,16 @@ const grievancesSchema = mongoose.Schema({
     description:{
         type:String,
         required:true
+    },
+    forwardedTo:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'users',
+        required:false
+    },
+    status:{
+        type:String,
+        enum:['requested','assigned','completed','verified'],
+        default:'requested'
     }
 })
 
