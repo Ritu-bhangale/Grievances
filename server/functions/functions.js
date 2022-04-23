@@ -135,6 +135,23 @@ const getUncompletedGrievances = async(req,res)=>{
     })
 }
 
+const assignToStaff = async(req,res)=>{
+    const {ForwardedTo} = req.body
+    const grievance = await grievancesModel.findOneAndUpdate(
+        {_id:req.params.id},
+        {
+            ForwardedTo:ForwardedTo,
+            status:'assigned'
+        })
+    console.log(grievance)
+    if(!grievance){
+        return res.status(400).json({
+            success:false,
+            msg:"grievance not found"
+        })
+    }
+}
+
 
 
 module.exports = {
@@ -145,5 +162,6 @@ module.exports = {
     showAllGrievances,
     sortGrievancesByType,
     getUsersGrievance,
-    getUncompletedGrievances
+    getUncompletedGrievances,
+    assignToStaff
 }

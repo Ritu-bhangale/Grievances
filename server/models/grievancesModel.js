@@ -15,9 +15,9 @@ const grievancesSchema = mongoose.Schema({
         required:true
     },
     forwardedTo:{
-        type:mongoose.Schema.Types.ObjectId,
+        type:String,
         ref:'users',
-        required:false
+        default:'not yet assigned'
     },
     status:{
         type:String,
