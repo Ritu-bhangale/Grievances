@@ -1,0 +1,49 @@
+.grievanceCard{
+    text-align: left;
+    background-color: var(--whitish);
+    width: 55vw;
+    border-radius: var(--border-radius-card);
+    backdrop-filter: var(--backdrop-filter);
+    padding: 5vh 8vw;
+}
+.grievanceCard >.typeClass> p.type{
+    font-size: var(--font-size-semibold);
+    font-weight: var(--font-weight-semibold);
+}
+h1.typeTag{
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-medium);
+    background: var(--yellow-gradient);
+    padding: 1.5vh 2vw;
+    width: 3.5vw;
+    border-radius: var(--border-radius-button);
+}
+.typeClass{
+    display: flex;
+}
+p.type{
+    margin-top: 1vh;
+    margin-right: 1.5vw;
+}
+.grievanceCard > p.description{
+    margin-top: 1vh;
+    margin-right: 1.5vw;
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-semibold);
+}
+p.descrip {
+    font-size: var(--font-size-medium);
+}
+p.forwarded{
+    font-weight: var(--font-weight-semibold);
+    margin-top: 2vh;
+}
+h1.forwardedTo{
+    font-size: var(--font-size-semibold);
+    font-weight: var(--font-weight-semibold);
+    margin-top: 2vh;
+    margin-left: 0.5vw;
+}
+.forwardedClass{
+    display: flex;
+}

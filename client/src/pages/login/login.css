@@ -1,0 +1,45 @@
+.login{
+    background: var(--blue-green-gradient);
+    height: 100vh;
+    color: white;
+
+}
+.form-part{
+    background-color: var(--whitish);
+    width: 50%;
+    display: block;
+    margin-left: 20%;
+    text-align: left;
+    color: black;
+    padding: 10vh 6vw;
+    padding-top: 8vh;
+}
+.form > form > p{
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 0vh;
+}
+input[type="text"], input[type= "password"]{
+    background-color: transparent;
+    border: solid black 2px;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    margin-bottom: 4vh;
+    padding: 2vh 24vw 2vh 0vw;
+}
+input[type="text"]:focus, input[type= "password"]:focus{
+    outline: none;
+}
+form > Button{
+    margin-top: 5vh;
+}
+.forgot > Button{
+    margin-top: 1vh;
+    font-size: var(--font-size-medium)
+}
+.login > h1.loginHead {
+    padding-top: 6vh;
+    font-size: var(--font-size-heading);
+    font-weight: var(--font-weight-heading);
+}

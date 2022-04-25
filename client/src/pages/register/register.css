@@ -1,0 +1,13 @@
+.register{
+    background: var(--blue-green-gradient);
+    padding-top: 6vh;
+}
+.left-side> .form-part > h1{
+    margin-bottom: 5vh;
+}
+.right-side > .right > h1{
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-medium);
+    color: white;
+    margin-bottom: 1vh;
+}

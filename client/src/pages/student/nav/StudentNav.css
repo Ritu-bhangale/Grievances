@@ -1,0 +1,27 @@
+.navContainer > h2 > span{
+    font-size: var(--font-size-semibold);
+    font-weight: var(--font-weight-semibold);
+}
+h5{
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 8vh;
+}
+.navContainer{
+    text-align: left;
+    background-color: var(--whitish);
+    padding: 10vh 4vw;
+    backdrop-filter: var(--backdrop-filter);
+    border-radius: var(--border-radius-card);
+}
+p.solvedGrievance{
+    margin-top: 5vh;
+}
+p.opt{
+    padding: 2vh 1vw;
+    background: var(--blue-gradient);
+    margin-top: 2vh;
+}
+.bookAppoint{
+    margin-top: 42vh;
+}
